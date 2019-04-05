@@ -1,5 +1,5 @@
 <script type="text/discourse-plugin" version="0.4">
-api.decorateWidget("header-buttons:after", helper => {
+api.decorateWidget("header-buttons:before", helper => {
   var hlt = settings.Header_links;
   return hlt.split("|").map(i => {
     const seg = $.map(i.split(","), $.trim);
