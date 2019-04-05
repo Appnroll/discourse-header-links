@@ -1,10 +1,10 @@
 <script type="text/discourse-plugin" version="0.4">
-api.decorateWidget("header-buttons:before", helper => {
+api.decorateWidget("header-buttons:after", helper => {
   var hlt = settings.Header_links;
   return hlt.split("|").map(i => {
     const seg = $.map(i.split(","), $.trim);
 
-    helper.h("a.btn-primary.btn-small.sign-up-button" + seg[3],
+    return helper.h("a.btn-primary.btn-small.sign-up-button" + seg[3],
       {
         label: "sign_up",
         title: seg[0],
