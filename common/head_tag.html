@@ -4,13 +4,17 @@ api.decorateWidget("header-buttons:after", helper => {
   return hlt.split("|").map(i => {
     const seg = $.map(i.split(","), $.trim);
 
-    return helper.h("button.btn-primary.btn-small.sign-up-button" + seg[3],
-    {
-      label: "sign_up"
-      href: seg[2],
-      title: seg[0],
-      target: "_" + seg[4]
-    });
-  });
+    return helper.h("a", {
+      href: seg[2]
+    },
+    [
+      helper.h("button.btn-primary.btn-small.sign-up-button" + seg[3],
+        {
+          label: "sign_up"
+          title: seg[0],
+          target: "_" + seg[4]
+        }
+      );
+    ]);
 });
 </script>
